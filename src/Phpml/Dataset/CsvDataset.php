@@ -30,6 +30,7 @@ class CsvDataset extends ArrayDataset
         }
 
         while (($data = fgetcsv($handle, 1000, ',')) !== false) {
+            $data = array_map('intval',$data);
             $this->samples[] = array_slice($data, 0, $features);
             $this->targets[] = $data[$features];
         }
