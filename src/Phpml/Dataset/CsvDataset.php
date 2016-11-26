@@ -15,7 +15,7 @@ class CsvDataset extends ArrayDataset
      *
      * @throws DatasetException
      */
-    public function __construct(string $filepath, int $features, bool $headingRow = true, $delimiter = ';')
+    public function __construct(string $filepath, int $features, bool $headingRow = true, $delimiter = ',')
     {
         if (!file_exists($filepath)) {
             throw DatasetException::missingFile(basename($filepath));
